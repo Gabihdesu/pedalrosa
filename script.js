@@ -31,24 +31,41 @@ parametros.forEach(ativarProduto);
 //.
 // perguntas frquente ----
 
-const perguntas = document.querySelectorAll(".perguntas button"); //seleciona todos os botões dentro da classe 'perguntas'
+// const perguntas = document.querySelectorAll(".perguntas button"); //seleciona todos os botões dentro da classe 'perguntas'
 
-function mostrarPergunta(event){
-  const pergunta = event.currentTarget; //puxar qual elemento que está clicando
-  const controls = pergunta.getAttribute("aria-controls");  //puxar o atributo da pergunta
-  const resposta = document.getElementById(controls);  //puxar o id da resposta
+// function mostrarPergunta(event){
+//   const pergunta = event.currentTarget; //puxar qual elemento que está clicando
+//   const controls = pergunta.getAttribute("aria-controls");  //puxar o atributo da pergunta
+//   const resposta = document.getElementById(controls);  //puxar o id da resposta
 
-  pergunta.setAttribute('aria-expanded', true);  //colocar a aria-expanded como true quando clica
-  const ativa = resposta.classList.contains("ativa"); // verifica se tem a classe ativa ou não
-  resposta.classList.toggle('ativa'); //colocar a classe ativa conforme clica
+//   pergunta.setAttribute('aria-expanded', true);  //colocar a aria-expanded como true quando clica
+//   const ativa = resposta.classList.contains("ativa"); // verifica se tem a classe ativa ou não
+//   resposta.classList.toggle('ativa'); //colocar a classe ativa conforme clica
 
-  console.log(resposta);
+//   console.log(resposta);
+// }
+
+// function expandir (pergunta){
+//   pergunta.addEventListener('click', mostrarPergunta);  // evento de clique
+// }
+// perguntas.forEach(expandir); //criar função da array
+
+const perguntas = document.querySelectorAll(".perguntas button");
+
+function ativarPergunta(event) {
+  const pergunta = event.currentTarget;
+  const controls = pergunta.getAttribute("aria-controls");
+  const resposta = document.getElementById(controls);
+
+  resposta.classList.toggle("ativa");
+  const ativa = resposta.classList.contains("ativa");
+  pergunta.setAttribute("aria-expanded", ativa);
 }
 
-function expandir (pergunta){
-  pergunta.addEventListener('click', mostrarPergunta);  // evento de clique
+function eventosPerguntas(pergunta) {
+  pergunta.addEventListener("click", ativarPergunta);
 }
-perguntas.forEach(expandir); //criar função da array
+
 
 //.
 // GALERIA DE FOTOS
