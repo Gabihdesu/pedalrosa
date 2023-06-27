@@ -1,0 +1,177 @@
+#orcamento {
+  background: linear-gradient(var(--rosa-escuro) 600px, var(--cor-9) 0px);
+}
+
+.orcamento {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  padding-bottom: 7.5rem;
+}
+
+.orcamento h2 {
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.orcamento h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.25rem;
+  height: 0.5rem;
+  background-color: var(--rosa-2);
+  position: absolute;
+  left: -0.75rem;
+}
+
+.orcamento-produto,
+.orcamento-dados {
+  padding: 3.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.orcamento-produto {
+  border-radius: 5px 0 0 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-content: start;
+  background: var(--fundo) url("/img/dec/bottom-left.svg") no-repeat bottom 20px left 20px;
+}
+
+.orcamento-produto > * {
+  grid-column: 1/-1;
+}
+
+.orcamento-produto > label {
+  grid-column: initial;
+}
+
+.orcamento-produto label {
+  font: 400 1rem/1.5 "Poppins", sans-serif;
+  color: var(--cor-10);
+  background-color: var(--rosa-4);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border: 1px solid var(--rosa-5);
+}
+
+.orcamento-produto input:checked + label {
+  background: var(--cor-0);
+  color: var(--rosa-escuro);
+}
+
+.orcamento-produto label::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--rosa-3);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.orcamento-produto input:checked + label::before {
+  border-color: var(--rosa-4);
+  box-shadow: inset 0 0 0 3px var(--cor-0), inset 0 0 0 6px var(--rosa-4);
+}
+
+.orcamento-produto label:hover {
+  background-color: var(--rosa-5);
+  border-color: var(--rosa-5);
+}
+
+.orcamento-produto input:focus + label {
+  box-shadow: 0 0 0 2px var(--rosa-2);
+  border-color: var(--fundo);
+}
+
+.orcamento-produto label span {
+  display: none;
+}
+
+.orcamento-produto input:checked + label span {
+  display: inline-block;
+}
+
+.orcamento-produto input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.orcamento-dados {
+  border-radius: 0 0.3rem 0.3rem 0;
+  background: var(--cor-0) url("/img/dec/bottom-right.svg") no-repeat bottom 20px right 20px;
+}
+
+.orcamento-conteudo {
+  display: none;
+}
+
+.orcamento-conteudo h2,
+.orcamento-dados h2:nth-of-type(n + 2) {
+  margin-top: 1.25rem;
+}
+
+#pedalrosa:checked ~ #orcamento-pedalrosa, 
+#seguro:checked ~ #orcamento-seguro /* # seleciona o id  e o ~ seleciona o próximo id logo após com o mesmo pai*/{
+  display: grid;
+  gap: 1.25rem;
+}
+
+.orcamento-detalhes {
+  display: none;
+  background: var(--cor-0);
+  padding: 1.25rem;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.orcamento-detalhes li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.orcamento-detalhes li img {
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.orcamento-produto input:checked + label + .orcamento-detalhes {
+  display: grid;
+}
+
+@media (max-width: 1200px) {
+  .orcamento-produto,
+  .orcamento-dados {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .orcamento {
+    grid-template-columns: 1fr;
+  }
+  .orcamento-produto {
+    border-radius: 0.3rem 0.3rem 0 0;
+    background: var(--fundo);
+  }
+  .orcamento-dados {
+    border-radius: 0 0 0.3rem 0.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .orcamento-produto {
+    grid-template-columns: 1fr;
+  }
+}

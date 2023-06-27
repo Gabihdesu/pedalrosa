@@ -1,0 +1,43 @@
+:root {
+  --fundo: #000000;
+  --rosa: rgb(255, 170, 198) ;
+  --rosa-x: #b1158fb4;
+  --rosa-2: #ec26c1;
+  --rosa-3: #b8b6b6;
+  --rosa-4: #444444;
+  --rosa-5: #575555;
+  --rosa-escuro: #161515;
+  --btn: linear-gradient(#ec26c1, #ec66cf);
+  --btn-hover: linear-gradient(#9e1b82, #a75c96);
+  --cor-0: #ffffff;
+  --cor-9: #f8f5f5;
+  --cor-10: #eeebeb;
+}
+
+.cor-0 {
+  color: var(--cor-0);
+}
+
+.cor-1 {
+  color: var(--rosa-3);
+}
+
+.cor-1-x {
+  color: var(--rosa-4);
+}
+
+.cor-2 {
+  color: var(--rosa-2);
+}
+.cor-3 {
+  background: var(--fundo);
+}
+
+.cor-4 {
+  color: var(--fundo);
+}
+
+.cor-5 {
+  color: var(--rosa-escuro);
+}
+

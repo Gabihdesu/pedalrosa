@@ -1,103 +1,40 @@
 
-body {
-  margin: 0rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import url("global.css");
+@import url("header.css");
 
-ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-}
+/* utilidades */
+@import url("utilidades/componetes.css");
+@import url("utilidades/tipografia.css");
+@import url("utilidades/cores.css");
+@import url("utilidades/footer.css");
+@import url("utilidades/formulario.css");
+@import url("utilidades/animacao.css");
 
-a {
-  text-decoration: none;
-}
+/* home */
+@import url("home/introducao.css");
+@import url("home/tecnologia.css");
+@import url("home/parceiros.css");
+@import url("home/depoimento.css");
 
-:root {
-  --fundo: #000000;
-  --rosa: #f0a1df;
-  --rosa-escuro: #330d2b;
-}
+/* seguros */
+@import url("seguros/seguros.css");
+@import url("seguros/vantagens.css");
+@import url("seguros/perguntas.css");
 
-.header-bg {
-  background-color: var(--fundo);
-}
-.header {
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 75rem;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* termos */
+@import url("termos/termos.css");
 
-.header-menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
+/* bicicletas */
+@import url("bicicletas/bicicletas.css");
+@import url("bicicletas/biciletas-lista.css");
 
-.header-menu a {
-  padding: 0.5rem 0rem;
-  display: inline-block;
-  color: #ffff;
-  font-size: 1.13rem;
-  border-bottom: solid var(--fundo) 0.2rem;
-  position: relative;
-}
+/* bicicleta */
+@import url("bicicleta/bicicleta.css");
+@import url("bicicleta/seguro-bici.css");
 
-.header-menu a::after {
-  content: "";
-  background: var(--rosa);
-  width: 0rem;
-  height: 0.125rem;
-  display: block;
-  margin-top: 0.25rem;
-}
+/* contato */
+@import url("contato/contato.css");
+@import url("contato/lojas.css");
 
-.header-menu a:hover::after {
-  width: 100%;
-  transition: 0.3s;
-  position: absolute;
-}
-
-@media (max-width: 800px) {
-    .header-menu a {
-      background: var(--rosa-escuro);
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-    }
-    .header-menu a:hover {
-      background: #5c3353
-    }
-
-    .header-menu {
-      gap: 1.25rem;
-    }
-}
-
-@media (max-width: 600px) {
-
-  .header {
-    gap: 0.75rem;
-  }
-
-  .header-menu a {
-    padding: 0.5rem 0.75rem;
-    font-size: 14px;
-  }
-
-  .header-menu a:hover {
-    background: #5c3353
-  }
-
-  .header-menu a::after {
-    display: none;
-  }
-}
+/* orçamento */
+@import url("orcamento/orcamento.css");
